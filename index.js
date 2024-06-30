@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = 3001;
 
 // Middleware
 app.use(bodyParser.json());
@@ -72,6 +72,10 @@ const exampleData = {
 app.get('/invoice-data', (req, res) => {
   res.json(exampleData);
 });
+
+app.get('/',(req, res)=>{
+  res.send("Welcome to Invoice Generator");
+})
 
 // Start server
 app.listen(PORT, () => {
